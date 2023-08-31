@@ -70,7 +70,14 @@ def page_render(page, keyword=None):
 @attraction_blueprint.route("/attractions", methods=["GET"])
 def get_attractions():
     try:
-        page = int(request.args.get('page', 0))
+        page = request.args.get('page', 0)
+        if not page.isdigit():
+            error_data = {
+                "error": True,
+                "message": "Page must be a number."
+            }
+            return jsonify(error_data), 404
+        page = int(page)
         keyword = request.args.get('keyword')
         nextPage, attractions = page_render(page, keyword)
         response_data = {
