@@ -51,8 +51,12 @@ def attraction_IDdata(attractionId):
         cursor.execute(
             f"SELECT  {select_data} FROM travel_info WHERE id = %s", (attractionId,))
         attraction = cursor.fetchone()
+        if not attraction:
+            return None
         attraction["imgs_str"] = json.loads(attraction["imgs_str"])       
         return attraction
+    except Exception as e:
+        return None
     finally:
         cursor.close()
         connection.close()
@@ -70,16 +74,34 @@ def page_render(page, keyword=None):
 @attraction_blueprint.route("/attractions", methods=["GET"])
 def get_attractions():
     try:
-        page = request.args.get('page', 0)
-        if not page.isdigit():
+        page = request.args.get('page', None) 
+        keyword = request.args.get('keyword')
+        if page is None and keyword is None:
             error_data = {
                 "error": True,
-                "message": "Page must be a number."
+                "message": "請輸入頁面號碼或關鍵字"
+            }
+            return jsonify(error_data), 400
+
+        if page and not page.isdigit():
+            error_data = {
+                "error": True,
+                "message": "頁面資訊必須要是數字."
+            }
+            return jsonify(error_data), 400
+
+        if page:
+            page = int(page)
+
+        nextPage, attractions = page_render(page, keyword)
+
+        if not attractions:
+            error_data = {
+                "error": True,
+                "message": "查無資料，請輸入其他訊息進行搜尋"
             }
             return jsonify(error_data), 404
-        page = int(page)
-        keyword = request.args.get('keyword')
-        nextPage, attractions = page_render(page, keyword)
+        
         response_data = {
             "nextPage": nextPage,
             "data": []
@@ -105,12 +127,16 @@ def get_attractions():
             "message": str(e)
         }
         return jsonify(error_data), 500
-@attraction_blueprint.route("/attraction/<int:attractionId>", methods=["GET"])
+@attraction_blueprint.route("/attraction/<string:attractionId>", methods=["GET"])
 def get_attractionID(attractionId):
     try:
-        attraction=attraction_IDdata(attractionId)
+        try:
+            attractionId = int(attractionId)
+        except ValueError:
+            return jsonify({"error": True, "message": "請輸入數字"}), 400
+        attraction = attraction_IDdata(attractionId)
         if not attraction:
-            return jsonify({"error":True,"message":"Attraction not found"}),404
+            return jsonify({"error": True, "message": "查無此資料"}), 404
         response_data={
             "data": {
                 "id": attraction["id"],
