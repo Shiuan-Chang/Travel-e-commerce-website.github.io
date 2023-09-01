@@ -1,7 +1,11 @@
 from flask import *
+from api.attraction import attraction_blueprint
+from api.mrts import mrts_blueprint
 app=Flask(__name__)
 app.config["JSON_AS_ASCII"]=False
 app.config["TEMPLATES_AUTO_RELOAD"]=True
+app.register_blueprint(attraction_blueprint, url_prefix='/api')
+app.register_blueprint(mrts_blueprint, url_prefix='/api')
 
 # Pages
 @app.route("/")
