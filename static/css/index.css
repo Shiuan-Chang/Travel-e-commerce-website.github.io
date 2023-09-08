@@ -191,15 +191,16 @@ img {
 .griddiv {
   cursor: pointer;
   height: 242px;
-  box-sizing: border-box;
   position: relative;
+  border-radius: 5px;
+  border: 0.50px #E8E8E8 solid;
 }
 
 .griddiv .attradiv {
   height: 40px;
   width: 100%;
   position: absolute;
-  bottom: 45px;
+  bottom: 44px;
   background-color: black;
   opacity: 0.6;
   box-sizing: border-box;
@@ -222,9 +223,10 @@ img {
   justify-content: space-between;
   height: 40px;
   align-items: center;
-  padding: 8px 10px 7px 10px;
+  padding: 6px 10px 6px 10px;
   position: relative;
   bottom: 6px;
+  margin-top: 4px;
 }
 
 .griddiv .mrtdiv p {
