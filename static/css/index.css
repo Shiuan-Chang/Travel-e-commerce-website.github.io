@@ -140,6 +140,7 @@
   padding-left: 10px;
   padding-bottom: 13px;
   padding-right: 10px;
+  scroll-behavior: smooth;
 }
 
 .middle_section::-webkit-scrollbar {
