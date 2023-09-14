@@ -26,7 +26,7 @@ def attractions_data(index, keyword):
         select_data = "id, name, cat, description, address, direction, mrt, latitude, longitude, imgs_str"
         if keyword is not None:
             data = f"SELECT {select_data} FROM travel_info WHERE name LIKE %s or mrt = %s LIMIT %s OFFSET %s"
-            result = (f'%{keyword}%', keyword, index+13, index)  
+            result = (f'%{keyword}%', keyword, index+13, index)  #(模乎匹配,精確匹配值，這將index的值加上13。在SQL查詢中，這將被用作LIMIT參數，代表查詢結果要返回的最大行數,被用作OFFSET參數，代表查詢結果從第幾行開始返回。)
         else:
             data = f"SELECT {select_data} FROM travel_info LIMIT %s OFFSET %s"
             result = (13, index)
@@ -67,6 +67,8 @@ def page_render(page, keyword=None):
     if len(attractions) == 13:
         attractions.pop()
         NextPage = page + 1
+        #當 page = 0（即第一頁）時，index = 0。因此，SQL查詢從第0行開始並取回最多13行。
+        #當 page = 1（即第二頁）時，index = 12。這意味著SQL查詢從第12行開始，並再次取回最多13行。
     else:
         NextPage = None
     return NextPage, attractions

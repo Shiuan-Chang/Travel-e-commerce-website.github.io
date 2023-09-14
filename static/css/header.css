@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans TC";
+}
+
+body nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+body nav .navbar {
+  align-items: center;
+  display: flex;
+  width: 1200px;
+  height: 34px;
+  margin: 10px 0;
+  align-items: center;
+  justify-content: space-between;
+}
+
+body nav .navbar .header a {
+  width: 150px;
+  font-weight: 700;
+  font-size: 30px;
+  color: #448899;
+}
+
+body nav .navbar .logbar {
+  display: flex;
+  width: 175px;
+  height: 34px;
+  align-items: center;
+}
+
+body nav .navbar .logbar .reserve {
+  padding: 10px;
+  width: 84px;
+  font-size: 16px;
+}
+
+body nav .navbar .logbar .log {
+  width: 91px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+a {
+  color: #666666;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  nav {
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+}
