@@ -54,7 +54,7 @@ function fetchattras() {
   let apiurl = keyword//根據keyword建立API URL
     ? `/api/attractions?page=${page}&keyword=${keyword}`//條件為真的回應(ternary operator)
     : `/api/attractions?page=${page}`;//條件為假的回應
-  if (isfetching === false) {//在上一次的請求還未完成之前，不會發出另一個請求。
+  if (isfetching === false) {//在上一次的請求還未完成之前，不會發出另一個請求。也就是說，===false時，即為確保之前的請求已完成，才會進行下一步請求。
     isfetching = true;//異步操作
     fetch(apiurl)//執行非同步http請求
       .then((response) => {

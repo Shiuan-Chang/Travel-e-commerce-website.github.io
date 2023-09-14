@@ -1,0 +1,399 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap");
+
+.main_div {
+  margin-top: 37px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.section_div {
+  width: 1200px;
+  height: 400px;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.img_div {
+  width: 540px;
+  height: 406px;
+  margin-bottom: 37px;
+  position: relative;
+
+}
+
+.right_div {
+  width: 600px;
+  height: 400px;
+  color: #666666;
+  margin: 0 0 48px 30px;
+}
+
+.right_div>h3 {
+  margin: 3px 0 15px 0;
+  color: #666666;
+  font-size: 24px;
+  font-family: 'Noto Sans TC';
+  font-weight: 700;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+label {
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+.boldtext {
+  font-weight: 700;
+
+}
+
+.book_div {
+  margin-top: 20px;
+  width: 600px;
+  min-height: 302px;
+  border-radius: 5px;
+  background-color: #e8e8e8;
+}
+
+.textbox {
+  padding-left: 20px;
+}
+
+.textbox>p {
+  color: #666666;
+  font-size: 16px;
+  font-family: 'Noto Sans TC';
+  padding-top: 15px;
+}
+
+.textbox>div {
+  margin-top: 15px;
+}
+
+input[type="date"] {
+  margin-top: 15px;
+  width: 193px;
+  height: 35px;
+  cursor: pointer;
+}
+
+input[type="radio"][name="selecttime"] {
+  outline: none;
+  appearance: none;
+  vertical-align: middle;
+  width: 22px;
+  height: 22px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.warning {
+  color: rgb(163, 55, 55);
+  padding-bottom: 15px;
+}
+
+input[type="radio"][name="selecttime"]:checked:after {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border-radius: 15px;
+  background-color: #448899;
+  display: inline-block;
+  border: 2px solid white;
+}
+
+button {
+  margin-top: 25px;
+  cursor: pointer;
+  font-size: 19px;
+  line-height: 16px;
+  border: none;
+  color: white;
+  width: 154px;
+  height: 36px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: #448899;
+  border-radius: 5px;
+}
+
+.hr2 {
+  background-color: #e8e8e8;
+  height: 1px;
+  border: none;
+  width: 1200px;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+  color: #448899;
+}
+
+.below_text {
+  width: 1180px;
+  margin: 0 auto;
+  margin-top: 40px;
+  line-height: 2;
+  color: #666666;
+  margin-bottom: 40px;
+}
+
+.below_text>h4 {
+  height: 32px;
+  margin-top: 20px;
+}
+
+.attraction-imgs {
+  display: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.prev {
+  left: 0;
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+  transform: translate(10px, -50%);
+  /*向右平移10巷素，並在垂直方向上置中*/
+  opacity: 0.7;
+}
+
+.next {
+  right: 0;
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+  transform: translate(-10px, -50%);
+  opacity: 0.7;
+}
+
+.sliders {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 5px;
+}
+
+.dot {
+  cursor: pointer;
+  width: 12px;
+  height: 12px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 8px;
+  opacity: 0.7;
+}
+
+.active.dot {
+  border: 1px solid #ffffff;
+  background-color: black;
+  display: inline-block;
+}
+
+.footer {
+  background-color: #757575;
+  height: 104px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 120px;
+}
+
+.footer p {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.separator {
+  margin-left: auto;
+  /* 左侧边距设置为自动，使线水平置中 */
+  margin-right: auto;
+  /* 左侧边距设置为自动，使线水平置中 */
+  margin-top: 48px;
+  width: 1200px;
+  border: 1px solid;
+  color: #E8E8E8;
+}
+
+
+@media (max-width: 1200px) {
+  .section_div {
+    width: 100%;
+    height: auto;
+    padding-left: unset;
+    padding-right: unset;
+  }
+
+  .main_div {
+    width: 90%;
+    margin: 37px auto 0;
+    align-items: center;
+  }
+
+  .right_div {
+    width: auto;
+    height: auto;
+    margin-left: unset;
+    padding: 0px 30px;
+  }
+
+  .book_div {
+    width: 500px;
+  }
+
+  .attraction-imgs {
+    object-fit: cover;
+    margin: 0 auto;
+  }
+
+  .separator {
+    width: auto;
+    margin-top: 30px;
+    border: 1px solid;
+  }
+
+  .below_text {
+    width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .section_div {
+    width: 100%;
+    height: auto;
+    padding-left: 0;
+    padding-right: 0;
+    display: block;
+    flex-wrap: unset;
+    justify-content: unset;
+    align-items: unset;
+  }
+
+  .main_div {
+    width: 100%;
+    margin-top: unset;
+  }
+
+  .img_div {
+    width: 100%;
+    height: 350px;
+    margin-bottom: 37px;
+    position: relative;
+  }
+
+  .attraction-imgs {
+    width: 100%;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+
+  .right_div {
+    width: 100%;
+    height: 100%;
+    margin-left: unset;
+    padding: 0px 30px;
+  }
+
+  .separator {
+    margin-top: 0px;
+    width: auto;
+  }
+
+  .book_div {
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #e8e8e8;
+  }
+
+
+  .below_text {
+    width: 90%;
+  }
+
+  .textbox {
+    padding-right: 20px;
+  }
+
+}
+
+@media (max-width: 360px) {
+
+  .section_div {
+    width: 100%;
+    height: auto;
+    padding-left: 0;
+    padding-right: 0;
+    display: block;
+    flex-wrap: unset;
+    justify-content: unset;
+    align-items: unset;
+  }
+
+  .main_div {
+    width: 100%;
+    margin-top: unset;
+  }
+
+  .img_div {
+    width: 100%;
+    height: 350px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .attraction-imgs {
+    width: 100%;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+
+  .right_div {
+    width: 100%;
+    height: 100%;
+    margin-left: unset;
+    margin-bottom: 40px;
+    padding: 0px 10px;
+  }
+
+  .separator {
+    margin-top: 0px;
+    width: auto;
+  }
+
+  .book_div {
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #e8e8e8;
+  }
+
+
+  .below_text {
+    width: 90%;
+    margin-left: 20px;
+    margin-right: 10px;
+  }
+
+  .textbox {
+    padding-right: 20px;
+  }
+
+  .footer {
+    margin-top: 40px;
+  }
+}
