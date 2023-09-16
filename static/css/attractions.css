@@ -223,9 +223,10 @@ a {
   margin-right: auto;
   /* 左侧边距设置为自动，使线水平置中 */
   margin-top: 48px;
+  height: 1px;
   width: 1200px;
-  border: 1px solid;
-  color: #E8E8E8;
+  border: none;
+  background-color: #E8E8E8;
 }
 
 
@@ -262,7 +263,6 @@ a {
   .separator {
     width: auto;
     margin-top: 30px;
-    border: 1px solid;
   }
 
   .below_text {
@@ -323,6 +323,7 @@ a {
 
   .below_text {
     width: 90%;
+
   }
 
   .textbox {
@@ -385,12 +386,12 @@ a {
 
   .below_text {
     width: 90%;
-    margin-left: 20px;
+    margin: 0px;
+    margin-top: 40px;
+    margin-left: 10px;
     margin-right: 10px;
-  }
-
-  .textbox {
-    padding-right: 20px;
+    padding-top: 10px;
+    padding-left: 10px;
   }
 
   .footer {
