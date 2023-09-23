@@ -162,8 +162,7 @@ function updateUIBasedOnToken(isLoggedIn) {
     if (!signoutElement) {
       let signout = document.createElement("p");
       signout.textContent = "登出系統";
-      signout.style.color = "#666666";
-      signout.style.cursor = "pointer";
+      signout.classList.add("logout-link");
       signout.setAttribute("onclick", "deleteUser();");
       logbarElement.insertBefore(signout, logElement);
     }

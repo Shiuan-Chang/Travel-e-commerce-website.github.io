@@ -103,3 +103,12 @@
 .signin {
   display: none;
 }
+
+.logout-link {
+  font-family: "Noto Sans TC";
+  font-size: 16px;
+  color: #666666;
+  cursor: pointer;
+  margin-left: 10px;
+  /* 添加其他样式，如间距等 */
+}
