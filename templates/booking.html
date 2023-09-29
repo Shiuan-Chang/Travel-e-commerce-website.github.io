@@ -1,9 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <meta charset="UTF-8" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/header.css" />
+  <link rel="stylesheet" href="../static/css/log.css" />
+  <link rel="stylesheet" href="../static/css/booking.css" />
+  <script src="../static/js/header.js" defer></script>
+  <script src="../static/js/booking.js" defer></script>
+  <script src="../static/js/user.js" defer></script>
   <title>台北一日遊</title>
 </head>
+
+<body>
+  <div id="headerContainer"></div>
+  <div class="welcome"></div>
+  <div class="no_plan">目前沒有任何待預定的行程</div>
+  <main>
+    <div class="section">
+      <div class="section__imgdiv">
+        <div></div>
+      </div>
+      <div class="booking">
+        <input class="delete__btn" type="image" src="../static/image/icon_delete.png" onclick="deleteSchedule()" />
+        <p class="booking__logo">台北一日遊：</p>
+        <div class="booking__container">
+          <div class="container__date"><span>日期：</span></div>
+          <div class="container__time"><span>時間：</span></div>
+          <div class="container__cost"><span>費用：</span></div>
+          <div class="container__place"><span> 地點：</span></div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <form class="contact_form">
+      <p>您的聯絡資訊</p>
+      <label for="name">聯絡姓名：</label>
+      <input type="text" id="name" />
+      <br />
+      <label for="email">連絡信箱：</label>
+      <input type="email" id="email" />
+      <br />
+      <label for="phone">手機號碼：</label>
+      <input type="number" id="phone" />
+      <div class="seperator1"></div>
+      <p class="notice">
+        請保持手機暢通，準時到達，導覽人員將用手機與您聯繫，務必留下正確的聯絡方式。
+      </p>
+    </form>
+    <hr />
+    <div class="cardform">
+      <p>信用卡付款資訊</p>
+      <br />
+      <span>卡片號碼：</span>
+      <input class="tpfield" id="card-number" type="password" placeholder="**** **** **** ****">
+      <br />
+      <span>過期時間：</span>
+      <input class="tpfield" id="card-expiration-date" type="number" placeholder="MM / YY">
+      <br />
+      <span>驗證密碼：</span>
+      <input class="tpfield" id="card-ccv" type="password" placeholder="CVV">
+      <div class="seperator2"></div>
+    </div>
+
+    <hr class="h3" />
+    <div class="confirm">
+      <p class="confirm__total">總價：</p>
+      <button type="button" class="booking_btn" onclick="onSubmit(event)">
+        確認訂購並付款
+      </button>
+    </div>
+  </main>
+
+  </main>
+  <footer class="footer">
+    <p>COPYRIGHT © 2021 台北一日遊</p>
+  </footer>
+</body>
+
+</html>
