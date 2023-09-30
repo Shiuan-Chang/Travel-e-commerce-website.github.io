@@ -1,4 +1,9 @@
-
+document.addEventListener("DOMContentLoaded", function () {
+  const userToken = localStorage.getItem('userToken');
+  if (window.location.pathname === '/booking' && !userToken) {
+    window.location.href = "/";
+  }
+});
 let bookingUrl = "/api/booking";
 let infos = [];
 //創建booking頁面
