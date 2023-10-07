@@ -1,12 +1,10 @@
 import pymysql
-import json
 import jwt
 import model.booking
 from flask import Blueprint, request, jsonify
 from dbutils.pooled_db import PooledDB
 from model.booking import post_booking
 from common.utils.response import success, failure
-from datetime import datetime, timedelta
 from decouple import config
 
 pool = PooledDB(
@@ -93,7 +91,6 @@ def post_booking():
         return failure("建立失敗，輸入不正確", 400)
     except Exception as e:
         return failure()
-
 
 @booking_blueprint.route("/booking", methods=["DELETE"])
 def handle_delete():

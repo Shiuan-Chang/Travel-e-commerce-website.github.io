@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta charset="UTF-8" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
@@ -15,6 +14,13 @@
   <script src="../static/js/header.js" defer></script>
   <script src="../static/js/booking.js" defer></script>
   <script src="../static/js/user.js" defer></script>
+  <script src="../static/js/order.js" defer></script>
+  <script src="https://js.tappaysdk.com/sdk/tpdirect/v5.14.0"></script>
+  <script>TPDirect.setupSDK(
+      137123,
+      "app_808xwiycSVQ6NETV3NEbl25aaOxIV1gwDNxGGkYdQTVP8p8KIhgtACnsEPvC",
+      "sandbox"
+    );</script>
   <title>台北一日遊</title>
 </head>
 
@@ -48,7 +54,7 @@
       <input type="email" id="email" />
       <br />
       <label for="phone">手機號碼：</label>
-      <input type="number" id="phone" class="hide-arrows" />
+      <input type="tel" id="phone" />
       <div class="seperator1"></div>
       <p class="notice">
         請保持手機暢通，準時到達，導覽人員將用手機與您聯繫，務必留下正確的聯絡方式。
@@ -59,13 +65,13 @@
       <p>信用卡付款資訊</p>
       <br />
       <span>卡片號碼：</span>
-      <input class="tpfield" id="card-number" type="password" placeholder="**** **** **** ****">
+      <div class="tpfield" id="card-number"></div>
       <br />
       <span>過期時間：</span>
-      <input class="tpfield hide-arrows" id="card-expiration-date" type="number" placeholder="MM / YY">
+      <div class="tpfield" id="card-expiration-date"></div>
       <br />
       <span>驗證密碼：</span>
-      <input class="tpfield" id="card-ccv" type="password" placeholder="CVV">
+      <div class="tpfield" id="card-ccv"></div>
       <div class="seperator2"></div>
     </div>
 
@@ -76,8 +82,6 @@
         確認訂購並付款
       </button>
     </div>
-  </main>
-
   </main>
   <footer class="footer">
     <p>COPYRIGHT © 2021 台北一日遊</p>

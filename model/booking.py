@@ -1,10 +1,7 @@
 import pymysql
-import bcrypt
 import json
 from pymysql.cursors import DictCursor
 from dbutils.pooled_db import PooledDB
-from datetime import datetime
-from common.utils.error import EmailException
 
 pool = PooledDB(
     creator=pymysql,
