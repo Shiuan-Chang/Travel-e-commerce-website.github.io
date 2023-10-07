@@ -97,7 +97,7 @@ function submitPrime(prime) {
   let email = document.querySelector("#email").value;
   let phone = document.querySelector("#phone").value;
   const userToken = localStorage.getItem('userToken');
-  fetch("/api/order", {
+  fetch("/api/orders", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

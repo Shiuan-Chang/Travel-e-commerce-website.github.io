@@ -77,7 +77,7 @@ def get_orderdb(order_number):
         return failure(str(e), 500)
 
 
-@order_blueprint.route("/order", methods=["POST"])
+@order_blueprint.route("/orders", methods=["POST"])
 def post_order():
     auth_header = request.headers.get('Authorization')
 
