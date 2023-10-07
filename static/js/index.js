@@ -142,3 +142,13 @@ function searchWithMRTName(mrtName) {
   fetchattras();  // 呼叫搜尋函數
 }
 fetchattras();
+
+window.reservation = function () {
+  const userToken = localStorage.getItem('userToken');
+  if (userToken) {
+    location.href = "/booking ";
+  } else {
+    let loginPopup = document.querySelector('.loginPopup');
+    loginPopup.style.display = "block";//將原先隱藏的登入畫面顯示出
+  }
+}

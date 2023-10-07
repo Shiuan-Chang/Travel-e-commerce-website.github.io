@@ -76,7 +76,7 @@ let header = `<div class="loginPopup">
 
   <div class="logbar">
     <div class="reserve">
-      <p><a class="text">預定行程</a></p>
+      <p><a class="text" onclick="reservation()">預定行程</a></p>
     </div>
     <div class="log">
       <p>

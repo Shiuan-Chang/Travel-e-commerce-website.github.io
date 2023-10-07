@@ -133,6 +133,9 @@ function verifyToken(token) {
       } else {
         updateUIBasedOnToken(false);
       }
+      if (location.href.split("/")[3] == "booking") {
+        getSchedule(data["data"]);
+      }
     })
     .catch((error) => {
       // 當有錯誤發生，例如 API 請求失敗
