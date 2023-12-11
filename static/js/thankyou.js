@@ -33,7 +33,7 @@ fetch(`/api/order/${order_numbr}`)
       ordercontainer_imgdiv.append(orderImg);
       //放置文字
       let orderSuccess = document.createElement("h2");
-      orderSuccess.textContent = "感謝您的訂購";
+      orderSuccess.textContent = "感謝您的訂購!";
       let ordercontainer_text = document.querySelector(".ordercontainer_text");
       let orderName = document.createElement("h3");
       orderName.textContent = `台北一日遊：${res["data"]["trip"]["attraction"]["name"]}`;
