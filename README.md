@@ -22,13 +22,13 @@ Users can browse and purchase a 2-day-1-night trip to their selected destination
 
 ## 🌐 3. Overall Website Architecture Diagram
 
-> *(Insert architecture diagram image here, e.g., `![Architecture Diagram](path/to/image.png)`)*
+![Website Architecture Diagram](https://github.com/Shiuan-Chang/flowcharts/blob/main/EcommerceWebsite/ecommerce.drawio.png?raw=true)
 
 ---
 
 ## 💳 4. Payment Flow Architecture Diagram
 
-> *(Insert payment flow diagram image here, e.g., `![Payment Flow](path/to/image.png)`)*
+![Payment Flow Diagram](https://github.com/Shiuan-Chang/flowcharts/blob/main/EcommerceWebsite/Ecommerce-payment.drawio.png?raw=true)
 
 ---
 
